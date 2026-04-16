@@ -43,41 +43,39 @@ const bookStore = {
     ]
 }
 
-// Write your code here!
-
-
-    
+// Write your code here!   
 
 const bookStoreTitle = document.getElementById("header");
-const bookStore = bookStoreTitle.textContent;
+bookStoreTitle.textContent =bookStore.name;
 
-const bookList = document.getElementById("book-list")
+const bookList = document.getElementById("book-list");
 
 bookStore.books.forEach(book => {
 
-    const bookContainer = bookStore.createElement("li");
+    const bookContainer = document.createElement("li");
 
     const bookTitle = document.createElement("h3");
-    bookContainer.bookStore = books.title;
+    bookTitle.textContent = book.title;
 
     const bookAuthor = document.createElement("p");
-    bookAuthor.bookStore  = books.author;
+    bookAuthor.textContent  = book.author;
 
-    const bookImg = document.createElement("img");
-    bookImg.src = books.imageUrl;
+    const bookImage = document.createElement("img");
+    bookImage.src = book.image;
+    
+
+    bookContainer.appendChild(bookTitle);
+    bookContainer.appendChild(bookAuthor);
+    bookContainer.appendChild(bookImage);
 
 
-    bookContainer.appendChild("bookTitle")
-    bookContainer.appendChild("bookAuthor")
-    bookContainer.appendChild("bookImage")
-
-
-    bookList.appendChild("bookContainer")
+    bookList.appendChild(bookContainer);
 
 });
 
 const deleteThisElement = document.getElementById("delete-this");
 
 if (deleteThisElement) {
-    deleteThisElement.removeChild();
+    deleteThisElement.remove();
 }
+console.log(book);
